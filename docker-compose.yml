@@ -15,7 +15,7 @@ services:
             MYSQL_ROOT_PASSWORD: "renato"
 
     rundeck:
-        image: ${RUNDECK_IMAGE:-rampss/rundeck:latest}
+        image: ${RUNDECK_IMAGE:-renato308/rundeck:latest}
         container_name: rundeck
         links:
             - mariadb
@@ -45,5 +45,5 @@ services:
             - rundeck
         restart: on-failure:5
         ports:
-            - 80:80
+            - 8081:80
             - 443:443
