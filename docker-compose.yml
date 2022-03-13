@@ -31,8 +31,8 @@ services:
             RUNDECK_PROJECT_STORAGE_TYPE: "db"
             DATABASE_URL: "jdbc:mysql://mariadb/rundeckdb?autoReconnect=true"
             DATABASE_ADMIN_USER: "root"
-            DATABASE_ADMIN_PASSWORD: "INSERIR USUARIO PARA O BD"
-            RUNDECK_PASSWORD: "INSERIR SENHA PARA O RUNDECK"
+            DATABASE_ADMIN_PASSWORD: "INSERIR SEU USUARIO"
+            RUNDECK_PASSWORD: "INSERIR SUA SENHA"
 
     nginx:
         image: nginx:latest
@@ -46,3 +46,4 @@ services:
         restart: on-failure:5
         ports:
             - 8081:80
+            - 443:443
