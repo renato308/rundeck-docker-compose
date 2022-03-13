@@ -23,7 +23,7 @@ services:
             - mariadb
         restart: on-failure:5
         environment:
-            EXTERNAL_SERVER_URL: "http://192.168.0.9/rundeck"
+            EXTERNAL_SERVER_URL: "http://INSERIR SEU IP/rundeck"
             SERVER_URL: ${EXTERNAL_SERVER_URL}
             RDECK_JVM_OPTS: "-Drundeck.jetty.connector.forwarded=true -Dserver.servlet.context-path=/rundeck"
             NO_LOCAL_MYSQL: "true"
@@ -31,8 +31,8 @@ services:
             RUNDECK_PROJECT_STORAGE_TYPE: "db"
             DATABASE_URL: "jdbc:mysql://mariadb/rundeckdb?autoReconnect=true"
             DATABASE_ADMIN_USER: "root"
-            DATABASE_ADMIN_PASSWORD: "renato"
-            RUNDECK_PASSWORD: "renato"
+            DATABASE_ADMIN_PASSWORD: "INSERIR USUARIO PARA O BD"
+            RUNDECK_PASSWORD: "INSERIR SENHA PARA O RUNDECK"
 
     nginx:
         image: nginx:latest
@@ -46,4 +46,3 @@ services:
         restart: on-failure:5
         ports:
             - 8081:80
-            - 443:443
